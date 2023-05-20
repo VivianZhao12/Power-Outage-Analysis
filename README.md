@@ -110,21 +110,21 @@ So we will create a new column that stores the durations as one of four categori
 
 ### Univariate Analysis
 
-1. This graph presents the distribution of **customers affected**. As expected, there are more occurrences where less customers are affected. It is rare to have a  large power outage effecting many people. Since one power station can be responsible for the electricity of many households, the occurrences of some extreme numbers are reasonable. 
+1.. This graph presents the distribution of **customers affected**. As expected, there are more occurrences where less customers are affected. It is rare to have a  large power outage effecting many people. Since one power station can be responsible for the electricity of many households, the occurrences of some extreme numbers are reasonable. 
 
-    <iframe src="Distribution_of_Customers_Affected.html" width=800 height=600 frameBorder=0></iframe>
-
----
-
-2. This graph presents the distribution of **outage durations**. This histogram shows that it is more probable to have an outage that lasts for a very short time period. However, there are a few cases of extreme durations. We need to check data to see if these are false entries.
-
-    <iframe src="Distribution_of_outage_duration.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="Distribution_of_Customers_Affected.html" width=800 height=600 frameBorder=0></iframe>
 
 ---
 
-3. This graph represents the distribution of **anomaly levels** (mean cold and warm episodes by season). This information presents the weather of different regions. By viewing its distirbution, we understand that the weather are almost normally distributed.
+2.. This graph presents the distribution of **outage durations**. This histogram shows that it is more probable to have an outage that lasts for a very short time period. However, there are a few cases of extreme durations. We need to check data to see if these are false entries.
 
-    <iframe src="Distribution_of_anomoly_level.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="Distribution_of_outage_duration.html" width=800 height=600 frameBorder=0></iframe>
+
+---
+
+3.. This graph represents the distribution of **anomaly levels** (mean cold and warm episodes by season). This information presents the weather of different regions. By viewing its distirbution, we understand that the weather are almost normally distributed.
+
+<iframe src="Distribution_of_anomoly_level.html" width=800 height=600 frameBorder=0></iframe>
 
 <br>
 
@@ -132,9 +132,9 @@ So we will create a new column that stores the durations as one of four categori
 
 ### Bivariate Analysis
 
-1. This graph represents the distribution of **cause categories and durations within each category**. Over all categories, severe weather seems to be the biggest cause of power outages. By looking closely, we see that categories severe weather, intentional attack, system operability disruption, and fuel supply emergency have a visible proportion of outages that took up to three weeks to restore. And categories severe weather, system operability disruption, and fuel supply emergency have a visible proportion of outages lasting over three weeks. This shows that these are the main causes of longer durations in outages.
+1.. This graph represents the distribution of **cause categories and durations within each category**. Over all categories, severe weather seems to be the biggest cause of power outages. By looking closely, we see that categories severe weather, intentional attack, system operability disruption, and fuel supply emergency have a visible proportion of outages that took up to three weeks to restore. And categories severe weather, system operability disruption, and fuel supply emergency have a visible proportion of outages lasting over three weeks. This shows that these are the main causes of longer durations in outages.
 
-    <iframe src="Distribution_of_cause_categories.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="Distribution_of_cause_categories.html" width=800 height=600 frameBorder=0></iframe>
 
 | OUTAGE.DURATION.WEEKS   |   equipment failure |   fuel supply emergency |   intentional attack |   islanding |   public appeal |   severe weather |   system operability disruption |
 |:------------------------|--------------------:|------------------------:|---------------------:|------------:|----------------:|-----------------:|--------------------------------:|
@@ -146,15 +146,15 @@ So we will create a new column that stores the durations as one of four categori
 
 ---
 
-2. This graph presents the relation between ANOMALY.LEVEL(climate) and OUTAGE.DURATION. It seems like there are **no visible relation** between climate and outage durations. This suggest that climate may not be a main cause of longer outage durations.
+2.. This graph presents the relation between ANOMALY.LEVEL(climate) and OUTAGE.DURATION. It seems like there are **no visible relation** between climate and outage durations. This suggest that climate may not be a main cause of longer outage durations.
 
-    <iframe src="relation1.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="relation1.html" width=800 height=600 frameBorder=0></iframe>
 
 ---
 
-3. This graphs presents the relation between outage duration and time (years). It seems like **no impovement** has been made in solving outage issues as there seems to be no relation between years and duration.
+3.. This graphs presents the relation between outage duration and time (years). It seems like **no impovement** has been made in solving outage issues as there seems to be no relation between years and duration.
 
-    <iframe src="relation2.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="relation2.html" width=800 height=600 frameBorder=0></iframe>
 
 ---
 <br>
@@ -194,7 +194,8 @@ If we have data on customer survey response on **how they think of the outage re
 ### Missingness Dependency
 
     We will be analyzing the column OUTAGE.DURATION.   
-<br>
+
+---
 
 **1. Is the missingness in outage duration dependent on cause category of the outage?**
 
@@ -221,6 +222,7 @@ Looking at the graph, it seems like there is much variation between cause catego
 the p_value is 0.001 which is much smaller than our significance level 0.05. If the p-value is less than or equal to 0.05, we would reject the null hypothesis and conclude that **there is evidence to suggest that the missingness of duration does depend on the cause category**.
 
 ---
+<br>
 
 **2.  Is the missingness in outage duration dependent on total price of the outage?**
 
