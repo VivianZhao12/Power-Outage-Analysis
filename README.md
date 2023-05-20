@@ -32,6 +32,9 @@ This outage dataset contains (1540 rows, 57 columns). Though the dataset contain
 ## Cleaning and EDA (Exploratory Data Analysis)
 
 ### Data Cleaning
+This dataset contains many null data and unused columns. In order to make the analysis process easier, we should first clean the data.
+
+
 |    | Major power outage events in the continental U.S.                                                           | Unnamed: 1   | Unnamed: 2   | Unnamed: 3   | Unnamed: 4   |
 |---:|:------------------------------------------------------------------------------------------------------------|:-------------|:-------------|:-------------|:-------------|
 |  0 | Time period: January 2000 - July 2016                                                                       | nan          | nan          | nan          | nan          |
@@ -40,3 +43,21 @@ This outage dataset contains (1540 rows, 57 columns). Though the dataset contain
 |  3 | nan                                                                                                         | nan          | nan          | nan          | nan          |
 |  4 | variables                                                                                                   | OBS          | YEAR         | MONTH        | U.S._STATE   |
 |  5 | Units                                                                                                       | nan          | nan          | nan          | nan          |
+
+
+
+1. **Correct the index and columns (set column names, remove invalid rows, remove original index from excel file)**
+
+Since the dataset is imported from an excel file, there are some formatting issues that need to be fixed. These operations will return a dataframe with the correct index and column names. Specifically, we will remove the first 4 lines of NaNs, remove the NaN row at index=5, remove two useless columns, set the column names to the values in the first row, remove the first row (index=4), and finally reset the index. 
+
+2. **Convert START and RESTORATION times and dates to timestamp.Create new columns "OUTAGE.START" and "OUTAGE.RESTORATION".**
+
+The columns OUTAGE.START.DATE, OUTAGE.START.TIME, OUTAGE.RESTORATION.DATE, and OUTAGE.RESTORATION.TIME are string type variables and contain similar information types. To make these information easier to understand and work with, we should combine and convert them to timestamp objects.
+
+3. **Drop rows that have more than 10 missing values**
+
+Browsing through the dataset, we see some rows with a lot of missing information. These rows assumingly do not contain as much useful information compared to others. I assume that these null values exist because such information was never recorded and does not depend on any other columns or the missing value itself. Thus, I will remove the rows that have more than 10 missing values to make the dataset more clear.
+
+4. **Filter out unneeded columns, keep columns that are relevant the answering the question only**
+
+Since our main focus in this analysis is duration time and its causes, we should delete the columns that will not give us any useful information regarding answering out question. (columns to keep: ["YEAR","HURRICANE.NAMES", 'U.S._STATE','CLIMATE.REGION', 'ANOMALY.LEVEL', 'CLIMATE.CATEGORY', 'CAUSE.CATEGORY', 'CAUSE.CATEGORY.DETAIL', 'OUTAGE.DURATION', 'CUSTOMERS.AFFECTED', 'OUTAGE.START', 'OUTAGE.RESTORATION', "TOTAL.PRICE"])
