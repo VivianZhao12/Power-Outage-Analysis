@@ -245,7 +245,7 @@ The p_value is 0.8, much higher than our significance level. This means that we 
 
 Finally after all the preprocessing work, we are ready to answer our main question! **Does fuel supply emergency lead to longer power outage durations?**
 
-To answer the question of whether fuel supply emergencies lead to longer power outage durations, we will perform a hypothesis test using the** means of the outage durations**. This choice of test statistic is appropriate because the mean provides a **representative measure** of the central tendency of the duration distribution and is less affected by outliers compared to other parameters such as maximum, range, or minimum.
+To answer the question of whether fuel supply emergencies lead to longer power outage durations, we will perform a hypothesis test using the means of the outage durations. This choice of test statistic is appropriate because the mean provides a **representative measure** of the central tendency of the duration distribution and is less affected by outliers compared to other parameters such as maximum, range, or minimum.
 
 The null hypothesis states that fuel supply emergencies do not lead to longer durations of power outages. In other words, there is no significant difference in the mean duration between outages caused by fuel supply emergencies and those caused by other factors. The alternative hypothesis suggests that fuel supply emergencies indeed lead to longer durations of power outages.
 
